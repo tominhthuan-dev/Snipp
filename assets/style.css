@@ -34,15 +34,29 @@ body {
   position: relative;
 }
 
+.container{
+    width: 100%;
+    padding-right: 100px;
+    padding-left: 100px;
+    
+}
+    
+
 a {
   text-decoration: none;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: inherit;
     font-weight: 500;
     line-height: 1.2;
-    color: inherit;
+    color: #404044;
+}
+
+.btn,.btn-primary {
+    background: #fce7f1;
+    border: 2px solid #fce7f1;
+    color: #ee76ad;
 }
 
 /* ====== HEADER STYLE ====== */
@@ -211,6 +225,264 @@ h1 {
     border-color: #fff;
 }
 
+.col-md-6{
+    padding: 0 15px;
+}
+
+.bg-light {
+    background: #f8faff;
+}
+
+.gallery-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-col-left,
+.gallery-col-right {
+  flex: 0 0 20%;              /* mỗi cột chiếm 30% */
+}
+
+.gallery-col-center {
+  flex: 0 0 50%;              /* cột giữa chiếm 40% */
+  display: flex;
+  flex-direction: column;     /* chứa 2 hàng */
+  gap: 20px;
+}
+
+.gallery-row-top {
+    display: flex;
+    align-items: flex-end;           /* mỗi hàng có 2 thẻ card nằm ngang */
+    gap: 40px;
+}
+
+.gallery-row-bottom {
+    display: flex;  
+    align-items: flex-start;            /* mỗi hàng có 2 thẻ card nằm ngang */
+    gap: 40px;
+}z
+
+.gallery-row .card {
+  flex: 1;                    /* mỗi card chiếm 50% trong hàng */
+}
+
+.card {
+  position: relative;
+  align-items: center;
+  width: 90%;   /* nhỏ hơn gallery-col ban đầu */
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+
+.card:hover .text-1 {
+    top: -95px;
+    opacity: 1;
+    border-radius: 0;
+    transition: transform 0.5s ease;
+}
+.card:hover .text-2 {
+    bottom: -95px;
+    opacity: 1;
+    border-radius: 0;
+    transform: scale(1);
+}
+
+.text-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    height: 80px;
+    background: #fff;
+    border-bottom: none;
+    z-index: -1;
+    padding: 15px;
+}
+
+.text-2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    height: 80px;
+    background:#fff;
+    border-top: none;
+    z-index: -1;
+    padding: 15px;
+}
+
+
+.text-2 {
+  opacity: 0;
+  transform: translateY(-100%); /* dịch lên trên bằng chiều cao của nó */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.text-1 {
+  opacity: 0;
+  transform: translateY(100%); /* dịch xuống dưới bằng chiều cao của nó */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card:hover .text-1 {
+    opacity: 1;
+    transform: translateY(0) scale(1.1); /* trở về vị trí ban đầu */
+    z-index: 10;
+}
+
+.card:hover .text-2 {
+    opacity: 1;
+    transform: translateY(0) scale(1.1); /* trở về vị trí ban đầu */
+    z-index: 10;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card .text-1 h3,
+.card .text-2 .d-flex h3 {
+    font-size: 20px;
+    
+    line-height: 1.2;
+}
+
+.card .text-1 h3 .tag,
+.card .text-2 .d-flex h3 .position {
+    font-size: 14px;
+    color: #c0c0c3;
+}
+
+
+.card-img {
+  width: 100%;
+  height: auto;       /* đặt chiều cao mong muốn */
+  object-fit: cover;   /* cắt ảnh cho vừa khung, không méo */
+  display: block;
+  transition: all 0.5s ease;
+}
+
+
+.card:hover .card-img {
+  transform: scale(1.1); /* ảnh to ra 10% */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center > h2 {
+    font-size: 37px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.text-center > h2 > strong {
+    font-weight: 700;
+    color: #efac78;
+    background: #fdf2ea;
+}
+
+.px-3 {
+    padding: 0 16px;
+}
+
+.px-5 {
+    padding: 16px 48px;
+    border-radius: 30px;
+}
+
+.btn.btn-primary:hover {
+    border: 2px solid #ee76ad;
+    background: transparent;
+    color: #ee76ad;
+}
+/* ====== Recent Blog ====== */
+body {
+    font-family: "Work Sans", Arial, sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: #8b8b92;
+}
+.ftco-section {
+    padding: 128px 0;
+}
+
+.blog-entry img {
+    width: 100%;
+    height: 350px;
+    display: block;
+}
+
+.heading-section .subheading {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.heading-section h2{
+    font-size: 38px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.heading-section p{
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #8b8b92;
+}
+
+.col-md-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+.blog-entry{
+    box-shadow: 0px 4px 18px -12px rgba(0, 0, 0, 0.75);
+    border: 1px solid #f7f7f7;
+}
+
+.blog-entry .text-block{
+    padding: 24px;
+}
+
+.blog-entry .text-block .mb-3{
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.blog-entry .text-block .mb-3 div{
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.blog-entry .text-block .heading{
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+
+/* ====== FOOTER STYLE ====== */
+
 footer {
     font-size: 16px;
     background: #ee76ad;
@@ -222,6 +494,9 @@ footer {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
 }
 
 .mb-5 {
@@ -266,9 +541,16 @@ footer {
 /* Responsive Styles */
 
 @media (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
   
 }
 @media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
     .row {
         display: flex;
         flex-direction: column;
@@ -277,8 +559,16 @@ footer {
         padding-left: 50px;
         
     }
+
+    .blog-entry {
+        margin-bottom: 30px;
+    }
 }
 @media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
     .header {
         position: fixed;
         top: 0;
@@ -323,6 +613,8 @@ footer {
 
 
 @media (max-width: 1200px) {
-  
+  .container {
+    max-width: 1140px;
+  }
 }
 
