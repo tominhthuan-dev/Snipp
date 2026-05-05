@@ -354,8 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card .text-1 h3,
 .card .text-2 .d-flex h3 {
-    font-size: 20px;
-    
+    font-size: 20px; 
     line-height: 1.2;
 }
 
